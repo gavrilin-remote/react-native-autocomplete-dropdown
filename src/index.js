@@ -165,7 +165,7 @@ export const AutocompleteDropdown = memo(
     const setInputText = (text) => {
       setSearchText(text)
     }
-    
+
     const setItem = (item) => {
       setSelectedItem(item)
     }
@@ -268,7 +268,7 @@ export const AutocompleteDropdown = memo(
     const onChangeText = useCallback((text) => {
       setSearchText(text)
       debouncedEvent(text)
-    }, [])
+    }, [debouncedEvent])
 
     const onChevronPress = useCallback(() => {
       toggle()
