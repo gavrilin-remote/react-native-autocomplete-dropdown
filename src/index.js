@@ -364,11 +364,11 @@ export const AutocompleteDropdown = memo(
             }}
           >
             <ScrollViewComponent
-              keyboardDismissMode="on-drag"
-              keyboardShouldPersistTaps="handled"
+              keyboardDismissMode={props.keyboardDismissMode ||"on-drag"}
+              keyboardShouldPersistTaps={props.keyboardShouldPersistTaps ||"handled"}
               style={{ maxHeight: suggestionsListMaxHeight }}
               nestedScrollEnabled={true}
-              onScrollBeginDrag={Keyboard.dismiss}
+              onScrollBeginDrag={props.onScrollBeginDrag || Keyboard.dismiss}
             >
               {
                 <View>
