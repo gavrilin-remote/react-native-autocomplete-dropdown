@@ -38,6 +38,7 @@ export const AutocompleteDropdown = memo(
     const inputHeight = props.inputHeight ?? moderateScale(40, 0.2)
     const suggestionsListMaxHeight =
       props.suggestionsListMaxHeight ?? moderateScale(200, 0.2)
+      const listScrollViewProps = props.listScrollViewProps || {}
     const bottomOffset = props.bottomOffset ?? 0
     const ScrollViewComponent = props.ScrollViewComponent ?? ScrollView
     const InputComponent = props.InputComponent ?? TextInput
@@ -369,6 +370,7 @@ export const AutocompleteDropdown = memo(
               style={{ maxHeight: suggestionsListMaxHeight }}
               nestedScrollEnabled={true}
               onScrollBeginDrag={props.onScrollBeginDrag || Keyboard.dismiss}
+              {...listScrollViewProps}
             >
               {
                 <View>
