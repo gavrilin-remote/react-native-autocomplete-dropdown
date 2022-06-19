@@ -20,6 +20,7 @@ interface AutocompleteDropdownProps {
   initialValue?: string | object
   loading?: boolean
   useFilter?: boolean
+  hideRightButton?: boolean
   showClear?: boolean
   showChevron?: boolean
   closeOnBlur?: boolean

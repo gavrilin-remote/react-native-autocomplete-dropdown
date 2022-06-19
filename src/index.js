@@ -342,18 +342,21 @@ export const AutocompleteDropdown = memo(
               ...(props.textInputProps ?? {}).style,
             }}
           />
-          <RightButton
-            isOpened={isOpened}
-            inputHeight={inputHeight}
-            onClearPress={onClearPress}
-            onChevronPress={onChevronPress}
-            showChevron={props.showChevron ?? true}
-            showClear={props.showClear ?? !!searchText}
-            loading={props.loading}
-            buttonsContainerStyle={props.rightButtonsContainerStyle}
-            ChevronIconComponent={props.ChevronIconComponent}
-            ClearIconComponent={props.ClearIconComponent}
-          ></RightButton>
+            {!props.hideRightButton ?
+                <RightButton
+                    isOpened={isOpened}
+                    inputHeight={inputHeight}
+                    onClearPress={onClearPress}
+                    onChevronPress={onChevronPress}
+                    showChevron={props.showChevron ?? true}
+                    showClear={props.showClear ?? !!searchText}
+                    loading={props.loading}
+                    buttonsContainerStyle={props.rightButtonsContainerStyle}
+                    ChevronIconComponent={props.ChevronIconComponent}
+                    ClearIconComponent={props.ClearIconComponent}
+                ></RightButton>
+                :null }
+
         </View>
 
         {isOpened && Array.isArray(dataSet) && (
